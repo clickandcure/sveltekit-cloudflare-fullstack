@@ -13,3 +13,4 @@ vite.config.ts.timestamp-*
 .wrangler
 /.wrangler
 wrangler.toml
+pnpm-lock.yaml

@@ -3,7 +3,7 @@
 	"version": "0.0.1",
 	"license": "Apache-2.0",
 	"scripts": {
-		"start": "vite dev",
+		"dev": "vite dev",
 		"proxy": "wrangler dev node_modules/cfw-bindings-wrangler-bridge/worker/index.js --remote --env staging --ip 127.0.0.1 --port 8787",
 		"build": "vite build",
 		"build:prod": "npm run  db:prod:push:all && vite build",
@@ -15,7 +15,7 @@
 		"d1:gen": "drizzle-kit generate:sqlite --config=drizzleD1.config.ts",
 		"d1:mig:local": "wrangler d1 migrations apply cloudflare_fullstack_db --local",
 		"d1:mig:prod": "wrangler d1 migrations apply cloudflare_fullstack_db ",
-		"preview": "vite preview",
+		"uat": "vite preview",
 		"w": "wrangler pages dev ./.svelte-kit/cloudflare  --env staging  ",
 		"test": "npm run test:integration && npm run test:unit",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
@@ -27,6 +27,7 @@
 	},
 	"devDependencies": {
 		"@fontsource/fira-mono": "^4.5.10",
+		"@graphql-tools/schema": "^10.0.3",
 		"@graphql-yoga/plugin-response-cache": "^3.2.1",
 		"@graphql-yoga/render-graphiql": "^5.1.1",
 		"@neoconfetti/svelte": "^1.0.0",
@@ -83,7 +84,8 @@
 		"typescript": "^5.3.3",
 		"vite": "^5.0.11",
 		"vitest": "^1.0.0",
-		"wrangler": "^3.22.4"
+		"wrangler": "^3.22.4",
+		"zod": "^3.23.8"
 	},
 	"type": "module"
 }

@@ -2,8 +2,11 @@ import { eq } from 'drizzle-orm';
 import { UserD1 } from '../../../../../db/schemas/schemaD1';
 import { json } from '@sveltejs/kit';
 import { DI } from '$src/app/utils/DI';
+
 import { UserService } from '$src/services/user.service';
+
 import { UserD1Select, insertUserSchema } from '$src/db/schemas/schemaD1/User.entity';
+
 const modelService = DI.container.resolve(UserService);
 
 export async function GET({ url, params, locals }) {
